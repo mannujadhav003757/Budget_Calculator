@@ -1,0 +1,20 @@
+{
+  "record": [
+    {
+      "id": 1,
+      "fname": "manoj",
+      "lname": "jadhav",
+      "uname": "manoj123",
+      "email": "test@gmail.com",
+      "password": "manoj12345"
+    },
+    {
+      "fname": "parth",
+      "lname": "parth",
+      "uname": "parth",
+      "email": "test@gmail.com",
+      "password": "parth123",
+      "id": 2
+    }
+  ]
+}
