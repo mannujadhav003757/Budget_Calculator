@@ -15,6 +15,22 @@
       "email": "test@gmail.com",
       "password": "parth123",
       "id": 2
+    },
+    {
+      "fname": "Sumit",
+      "lname": "jadhav",
+      "uname": "sumit123",
+      "email": "test@gmail.com",
+      "password": "sumit12345",
+      "id": 3
+    },
+    {
+      "fname": "rajkanya",
+      "lname": "jadhav",
+      "uname": "raj123",
+      "email": "test@gmail.com",
+      "password": "raj@123",
+      "id": 4
     }
   ]
 }
