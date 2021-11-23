@@ -16,10 +16,10 @@ export default function Login() {
         console.log("here is data:" + data)
     }
     const responseGoogle = (response) => {
-        console.log("Here is Gooogle response data:"+response)
+        console.log("Here is Gooogle response data:" + response)
         navigate('/budget')
-      }
-    
+    }
+
     const navigate = useNavigate()
     //states for inputs
     const [uname, setUname] = useState('')
@@ -31,36 +31,7 @@ export default function Login() {
     const [uerr, setUerr] = useState(false)
     const [emailerr, setEmailerr] = useState(false)
 
-    // async function validate(e)
-    // {
-    //     e.preventDefault()
-    //     var item={uname,email,pwd}
-    //     var result=await fetch('http://localhost:4001/record',{
-    //         method:'GET',
-    // headers:{
-    //     'Accept':'application/json',
-    //     'content-type':'application/json'
-    //         },
-    // body:JSON.stringify(item)
-    //     });
-    //     result = await result.json();
-    //     localStorage.setItem('user-info',JSON.stringify(result))
-    //     console.log("here is the result of log in"+result)
-    //     alert("log in successfull");
 
-    // }
-    // useEffect(() => {
-    //     axios.get('http://localhost:4001/record').then(resp => {
-    //       //console.log(JSON.stringify(resp))
-    //       console.log("here is original response"+resp)
-    //       const temp=resp.data
-    //       console.log("Here is the COnsole"+resp.data)
-    //       setState([resp])
-    //       console.log("here is the exact resposnse"+state)
-    //     }).catch(err => {
-    //       console.log(err)
-    //     })
-    //   }, [])
     useEffect(() => {
         axios.get('http://localhost:4001/record').then(resp => {
             console.log(resp)
@@ -69,7 +40,7 @@ export default function Login() {
         }).catch(err => {
             console.log(err)
         })
-    },[])
+    }, [])
 
 
 
@@ -89,45 +60,6 @@ export default function Login() {
                 }
             }
         })
-        // const temp = state.filter(key =>  key.uname === uname && key.email === email )
-        // console.log(temp)
-
-        // if(temp.length>0)
-        // {
-        //     console.log("temp"+temp[0])
-        //     if(temp[0].pwd===pwd)
-        //     {
-        //         alert("log in suceessfull")
-        //         console.log(pwd)
-
-        //             navigate('/budget')
-        //     }
-        //     else{
-        //          //alert("invalid credentials")
-        //          console.log(pwd)
-        //     }
-        // }
-
-        // state.map(key =>{
-        //     console.log("here is the exact resposnse"+state.uname)
-        //     if(key.uname===uname)
-        //     {
-        //         if(key.email===email)
-        //         {
-        //             if(key.password===pwd)
-        //             {
-        //                 alert("log in suceessfull")
-        //                 navigate('/budget')
-        //             }
-        //         }
-        //     }
-        //     else
-        //     {
-        //         //alert("invalid credentials")
-        //     }
-        // })
-
-        //navigate('/budget')
 
     }
 
@@ -145,16 +77,14 @@ export default function Login() {
                         <Form.Label>User Name:</Form.Label>
                         <Form.Control type="text" placeholder="Enter User Name..." onChange={(e) => {
                             setUname(e.target.value)
-                            if(uname.length<8)
-                        {
-                            setUerr(false)
-                        }
-                        else
-                        {
-                            setUerr(true)
-                        }
+                            if (uname.length < 8) {
+                                setUerr(false)
+                            }
+                            else {
+                                setUerr(true)
+                            }
 
-    
+
                         }} />
                         {
                             uerr ? <Form.Text className="text-muted">
@@ -206,7 +136,7 @@ export default function Login() {
                         callback={responseFacebook} />
                 </div>
                 <div className="App" style={{ marginTop: "10px" }}>
-                    <GoogleLogin 
+                    <GoogleLogin
                         clientId="549841564156-qibnmoc418bj0ndrdv4fia6ne7vmbufq.apps.googleusercontent.com"
                         buttonText="Log In from google"
                         onSuccess={responseGoogle}
